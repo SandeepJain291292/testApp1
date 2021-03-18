@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var session = require('express-session');
+// var session = require('express-session');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -14,18 +14,18 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(session({ 
-  secret: 'secret', 
-  resave: true, 
-  saveUninitialized: true, 
-  httpOnly:false, 
-  cookie: {
-    maxAge: 3600000000000,
-    httpOnly: false,
-    secure: true,
-    SameSite: 'None'
-  }
-})); //Session setup
+// app.use(session({ 
+//   secret: 'secret', 
+//   resave: true, 
+//   saveUninitialized: true, 
+//   httpOnly:false, 
+//   cookie: {
+//     maxAge: 3600000000000,
+//     httpOnly: false,
+//     secure: true,
+//     SameSite: 'None'
+//   }
+// })); //Session setup
 
 app.use(logger('dev'));
 app.use(express.json());
