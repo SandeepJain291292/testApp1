@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var LocalStorage = require('node-localstorage').LocalStorage;
-   //localStorage = new LocalStorage('./scratch');
+   localStorage = new LocalStorage('./scratch');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -13,8 +13,8 @@ router.get('/', function(req, res, next) {
   // res.setHeader('set-cookie', [
   //   `connect.sid=${req.sessionID}; SameSite=None: Secure`
   // ]);
-  console.log('name-ls2-'+LocalStorage.getItem('name'));
-  console.log('name city-ls2-'+LocalStorage.getItem('city'));
+  console.log('name-ls2-'+localStorage.getItem('name'));
+  console.log('name city-ls2-'+localStorage.getItem('city'));
   res.render('index', { title: 'App1' });
 });
 
